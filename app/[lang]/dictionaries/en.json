@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "Car Delivery from USA",
+    "contact": "Contact",
+    "calculator": "Calculator"
+  },
+  "hero": {
+    "subtitle": "Car import from the USA, Canada, Europe, and China — fast, reliable, and affordable."
+  },
+  "advantages": {
+    "title": "Advantages",
+    "items": [
+      {
+        "title": "Transparent pricing with no hidden fees",
+        "description": "You get an honest cost calculation with no extra or hidden charges."
+      },
+      {
+        "title": "Fast delivery and customs clearance",
+        "description": "We ensure quick vehicle delivery and minimize customs clearance time."
+      },
+      {
+        "title": "Legal support at every stage",
+        "description": "Our experts support you from purchase to vehicle registration in Ukraine."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "steps": [
+      {
+        "title": "Choose a car",
+        "description": "Pick a car from our database or send us your preferences."
+      },
+      {
+        "title": "Submit an application",
+        "description": "Fill out a simple form — we’ll contact you to clarify details."
+      },
+      {
+        "title": "Pay and receive the car in Ukraine",
+        "description": "After payment, we arrange delivery and paperwork, and you receive the car in Ukraine."
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "title": "Customs Clearance",
+        "description": "Full customs clearance according to current legislation."
+      },
+      {
+        "title": "Vehicle delivery from USA, Canada, Europe, and China",
+        "description": "Fast and secure car delivery to Ukraine."
+      },
+      {
+        "title": "Certification",
+        "description": "Obtaining conformity certificates for car registration."
+      },
+      {
+        "title": "Car selection",
+        "description": "Finding the best car options based on your needs and budget."
+      },
+      {
+        "title": "Legal support",
+        "description": "Legal guidance and consultation throughout the import process."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to import a car?",
+    "subtitle": "Contact us for a free consultation and cost estimate",
+    "buttons": {
+      "calculate": "Calculate Cost",
+      "contact": "Contact Us"
+    }
+  },
+  "footer": {
+    "description": "Professional car delivery from the USA, Canada, Europe, and China",
+    "rights": "All rights reserved"
+  }
+}
