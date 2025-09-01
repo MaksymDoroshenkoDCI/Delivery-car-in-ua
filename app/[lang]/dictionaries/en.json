@@ -28,6 +28,7 @@
   },
   "howItWorks": {
     "title": "How It Works",
+    "buttonText": "Order Now",
     "steps": [
       {
         "title": "Choose a car",
@@ -45,6 +46,7 @@
   },
   "services": {
     "title": "Our Services",
+    "buttonText": "Order Now",
     "items": [
       {
         "title": "Customs Clearance",

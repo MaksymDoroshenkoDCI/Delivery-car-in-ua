@@ -45,6 +45,7 @@
   },
   "services": {
     "title": "Наши услуги",
+    "buttonText": "Заказать",
     "items": [
       {
         "title": "Растаможка",

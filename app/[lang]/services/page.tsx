@@ -26,7 +26,14 @@ export default async function Page({ params }: Props) {
 
       <section className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {(dict.services.items as { title: string; description: string }[]).map((service, index) => (
-          <ServiceCard key={index} service={service} index={index} />
+          <ServiceCard
+            key={index}
+            service={{
+              ...service,
+              buttonText: dict.services.buttonText || "Order Now"
+            }}
+            index={index}
+          />
         ))}
       </section>
     </Layout>

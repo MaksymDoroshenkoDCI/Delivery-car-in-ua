@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 type Props = {
-  service: { title: string; description: string };
+  service: { title: string; description: string; buttonText: string };
   index: number;
 };
 
@@ -31,11 +31,11 @@ export default function ServiceCard({ service, index }: Props) {
       />
       <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
       <p className="text-muted-foreground mb-4">{service.description}</p>
-      <button
+      <button 
         className="mt-auto px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
         onClick={handleClick}
-      >
-        Замовити
+      > 
+      {("buttonText" in service) ? service.buttonText : "Order Now"}
       </button>
     </div>
   );
