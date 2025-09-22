@@ -9,6 +9,7 @@ import Link from "next/link";
 import "../styles/globals.css";
 import HexParticles from "./HexParticles";
 
+
 interface LayoutProps {
   children: React.ReactNode;
   lang: "ua" | "ru" | "en";

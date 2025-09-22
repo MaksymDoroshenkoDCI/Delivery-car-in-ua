@@ -3,8 +3,8 @@ import GlassBackground from "@/components/GlassBackground";
 import { getDictionary } from "./dictionaries";
 
 
-export default async function Home({ params }: { params: Promise<{ lang: "ua" | "ru" | "en" }> }) {
-  const { lang } = await params;
+export default async function Home({ params }: { params: { lang: "ua" | "ru" | "en" } }) {
+  const { lang } = params;
   const dict = await getDictionary(lang);
 
   return (

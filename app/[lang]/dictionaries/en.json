@@ -87,5 +87,18 @@
   "footer": {
     "description": "Professional car import from USA, Canada, Europe and China",
     "rights": "All rights reserved"
+  },
+  "contact": {
+    "title": "Contact us",
+    "description": "Have questions? Fill out the form below and we will get back to you shortly.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send"
+    },
+    "office": "Office",
+    "phone": "Phone",
+    "email": "Email"
   }
 }

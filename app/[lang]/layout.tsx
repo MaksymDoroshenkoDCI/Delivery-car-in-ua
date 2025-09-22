@@ -5,12 +5,12 @@ import { ThemeProvider } from "@/components/theme-provider"
 import "@/styles/globals.css"
 
 
-
 const inter = Inter({ subsets: ["latin", "cyrillic"] })
 
 export const metadata: Metadata = {
   title: "Delivery-car-in.ua - Пригон авто з США",
-  description: "Імпорт авто з США, Канади, Європи та Китаю — швидко, надійно, вигідно.",
+  description:
+    "Імпорт авто з США, Канади, Європи та Китаю — швидко, надійно, вигідно.",
 }
 
 export async function generateStaticParams() {
@@ -22,14 +22,19 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode
-  params: Promise<{ lang: "ua" | "ru" | "en" }>
+  params: { lang: "ua" | "ru" | "en" }
 }) {
-  const { lang } = await params
+  const { lang } = params;
 
   return (
     <html lang={lang} suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>

@@ -1,9 +1,19 @@
-import "server-only"
+import "server-only";
+
+import ua from "./dictionaries/ua.json";
+import ru from "./dictionaries/ru.json";
+import en from "./dictionaries/en.json";
 
 const dictionaries = {
-  ua: () => import("./dictionaries/ua.json").then((module) => module.default),
-  ru: () => import("./dictionaries/ru.json").then((module) => module.default),
-  en: () => import("./dictionaries/en.json").then((module) => module.default),
-}
+  ua,
+  ru,
+  en,
+};
 
-export const getDictionary = async (locale: "ua" | "ru" | "en") => dictionaries[locale]()
+export function getDictionary(locale: "ua" | "ru" | "en") {
+  const dict = dictionaries[locale];
+  if (!dict) {
+    throw new Error(`Unknown locale: ${locale}`);
+  }
+  return dict;
+}
