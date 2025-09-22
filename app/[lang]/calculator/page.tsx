@@ -1,30 +1,13 @@
 "use client";
 
-import Layout from "@/components/layout";
 import { useState } from "react";
-import { getDictionary } from "../dictionaries";
 
-type Lang = "ua" | "ru" | "en";
-type Props = { params: { lang: Lang } };
-
-export default async function CalculatorPage({ params }: Props) {
-  const dict = await getDictionary(params.lang);
-
-  return (
-    <Layout lang={params.lang} dict={dict}>
-      <Calculator dict={dict} />
-    </Layout>
-  );
-}
-
-function Calculator({ dict }: { dict: any }) {
-  const [price, setPrice] = useState<number>(0);
-  const [tax, setTax] = useState<number>(0);
+export default function Calculator({ dict }: { dict: any }) {
+  const [price, setPrice] = useState(0);
+  const [tax, setTax] = useState(0);
   const [result, setResult] = useState<number | null>(null);
 
-  const calculate = () => {
-    setResult(price + tax);
-  };
+  const calculate = () => setResult(price + tax);
 
   return (
     <section className="max-w-2xl mx-auto py-12">
