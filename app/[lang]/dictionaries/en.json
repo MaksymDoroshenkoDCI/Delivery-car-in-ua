@@ -86,6 +86,8 @@
   },
   "footer": {
     "description": "Professional car import from USA, Canada, Europe and China",
+    "contacts": ["+380 97 717 21 21", "info@delivery-car.in.ua", "Kyiv, Ukraine", "Berlin, Germany"],
+    "services": ["Import from USA", "Customs clearance", "Delivery", "Certification"],
     "rights": "All rights reserved"
   },
   "contact": {
