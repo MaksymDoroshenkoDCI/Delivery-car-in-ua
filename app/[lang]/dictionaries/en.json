@@ -97,7 +97,9 @@
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "submit": "Send"
+      "submit": "Send",
+      "success": "Your message has been sent!",
+      "error": "An error occurred. Please try again."
     },
     "office": "Office",
     "phone": "Phone",

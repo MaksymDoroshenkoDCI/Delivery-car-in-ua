@@ -1,30 +1,29 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import "@/styles/globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import "@/styles/globals.css";
 
-
-const inter = Inter({ subsets: ["latin", "cyrillic"] })
+const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Delivery-car-in.ua - Пригон авто з США",
-  description:
-    "Імпорт авто з США, Канади, Європи та Китаю — швидко, надійно, вигідно.",
-}
+  description: "Імпорт авто з США, Канади, Європи та Китаю — швидко, надійно, вигідно.",
+};
 
 export async function generateStaticParams() {
-  return [{ lang: "ua" }, { lang: "ru" }, { lang: "en" }]
+  return [{ lang: "ua" }, { lang: "ru" }, { lang: "en" }];
 }
 
+// ✅ Виправлення — `params` треба "await"
 export default async function RootLayout({
   children,
   params,
 }: {
-  children: React.ReactNode
-  params: { lang: "ua" | "ru" | "en" }
+  children: React.ReactNode;
+  params: Promise<{ lang: "ua" | "ru" | "en" }>;
 }) {
-  const { lang } = params;
+  const { lang } = await params; // <— ось головне!
 
   return (
     <html lang={lang} suppressHydrationWarning>
@@ -39,5 +38,6 @@ export default async function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
+// Головний лейаут з підтримкою темної/світлої теми та мультимовності.

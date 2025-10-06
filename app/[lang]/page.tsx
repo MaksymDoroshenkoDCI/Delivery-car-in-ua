@@ -2,16 +2,14 @@ import Layout from "@/components/layout";
 import GlassBackground from "@/components/GlassBackground";
 import { getDictionary } from "./dictionaries";
 
-
-export default async function Home({ params }: { params: { lang: "ua" | "ru" | "en" } }) {
-  const { lang } = params;
+export default async function Home(props: { params: Promise<{ lang: "ua" | "ru" | "en" }> }) {
+  const { lang } = await props.params; // 👈 обов’язково чекаємо params
   const dict = await getDictionary(lang);
 
   return (
     <Layout lang={lang} dict={dict}>
-      {/* 👇 Елемент ефекту скла */}
+      {/* 👇 Ефект скла */}
       <GlassBackground />
-
 
       <section className="text-center mb-16">
         <h1 className="text-4xl font-extrabold mb-4 text-blue-600">
@@ -20,10 +18,8 @@ export default async function Home({ params }: { params: { lang: "ua" | "ru" | "
         <p className="text-lg max-w-xl mx-auto text-black">{dict.hero.subtitle}</p>
       </section>
 
-      
-        
       <section className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Переваги — список з крапками */}
+        {/* Переваги */}
         <div className="p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
           <h2 className="text-xl font-semibold mb-4 text-primary">{dict.advantages.title}</h2>
           <ul className="list-disc list-outside space-y-4 text-left text-muted-foreground">
@@ -36,7 +32,7 @@ export default async function Home({ params }: { params: { lang: "ua" | "ru" | "
           </ul>
         </div>
 
-        {/* Як це працює — теж список з крапками (булетами) */}
+        {/* Як це працює */}
         <div className="p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
           <h2 className="text-xl font-semibold mb-4 text-primary">{dict.howItWorks.title}</h2>
           <ul className="list-disc list-outside text-left space-y-4 text-muted-foreground">
@@ -49,7 +45,7 @@ export default async function Home({ params }: { params: { lang: "ua" | "ru" | "
           </ul>
         </div>
 
-        {/* Наші послуги — вже зроблено з булетами */}
+        {/* Послуги */}
         <div className="p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
           <h2 className="text-xl font-semibold mb-4 text-primary">{dict.services.title}</h2>
           <ul className="list-disc list-outside text-left space-y-2 text-muted-foreground">
@@ -78,5 +74,6 @@ export default async function Home({ params }: { params: { lang: "ua" | "ru" | "
         </div>
       </section>
     </Layout>
-  )
+  );
 }
+// Головна сторінка з ефектом скла, що підтримує мультимовність.
