@@ -1,3 +1,5 @@
+// app/[lang]/delivery/page.tsx
+import React from "react";
 import Layout from "@/components/layout";
 // Update the import path if the dictionaries module is located elsewhere
 import { getDictionary } from "../dictionaries";

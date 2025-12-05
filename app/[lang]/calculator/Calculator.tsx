@@ -1,5 +1,5 @@
 "use client";
- import Layout from "../../../components/layout";
+
 import { useState } from "react";
 
 export default function Calculator({ dict }: { dict: any }) {

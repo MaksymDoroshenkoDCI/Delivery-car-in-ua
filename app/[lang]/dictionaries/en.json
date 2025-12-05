@@ -79,10 +79,11 @@
   },
   "calculator": {
     "title": "Cost Calculator",
+    "description": "Enter data to calculate",
     "price": "Car price",
-    "tax": "Tax / duty",
+    "tax": "Tax",
     "calculate": "Calculate",
-    "result": "Total cost"
+    "result": "Result"
   },
   "footer": {
     "description": "Professional car import from USA, Canada, Europe and China",
@@ -104,5 +105,9 @@
     "office": "Office",
     "phone": "Phone",
     "email": "Email"
+  },
+  "delivery": {
+    "title": "Car import from USA",
+    "description": "We will deliver your car quickly, reliably, and with full support."
   }
 }

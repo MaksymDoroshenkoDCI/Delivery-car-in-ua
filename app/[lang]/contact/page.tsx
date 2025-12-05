@@ -7,7 +7,7 @@ type Lang = "ua" | "ru" | "en";
 type Props = { params: { lang: Lang } };
 
 export default async function ContactsPage({ params }: Props) {
-  const dict = await getDictionary(params.lang);
+  const dict = getDictionary(params.lang);
 
   // використовуйте лише ключ 'contact'
   const contacts = dict.contact ?? {};
