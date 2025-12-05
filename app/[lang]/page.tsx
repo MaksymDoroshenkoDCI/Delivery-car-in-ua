@@ -1,6 +1,8 @@
 import Layout from "@/components/layout";
 import GlassBackground from "@/components/GlassBackground";
 import { getDictionary } from "./dictionaries";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home(props: { params: Promise<{ lang: "ua" | "ru" | "en" }> }) {
   const { lang } = await props.params; // 👈 обов’язково чекаємо params
@@ -11,12 +13,41 @@ export default async function Home(props: { params: Promise<{ lang: "ua" | "ru" 
       {/* 👇 Ефект скла */}
       <GlassBackground />
 
-      <section className="text-center mb-16">
-        <h1 className="text-4xl font-extrabold mb-4 text-blue-600">
-          Delivery Car in UA
-        </h1>
-        <p className="text-lg max-w-xl mx-auto text-black">{dict.hero.subtitle}</p>
-      </section>
+       {/* 🏁 HERO SLIDER */}
+<section className="relative w-full h-screen flex items-center justify overflow-hidden border-b-4 border-primary">
+  {/* Анімований фон */}
+  <div className="absolute inset-0 animate-slide bg-cover bg-center bg-no-repeat"></div>
+
+  {/* Напівпрозора затемнююча підкладка */}
+  <div className="absolute inset-0 bg-black/60 z-10 "></div>
+
+  {/* Контент поверх */}
+  <div className="relative z-20 text-center text-white px-6">
+    <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg border-b-4 border-primary  pb-2">
+      Пригон авто з США, Європи та Китаю
+    </h1>
+    <p className="max-w-2xl mx-auto text-lg md:text-xl mb-8 text-gray-200">
+      Імпорт авто під ключ — швидко, прозоро, вигідно.
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href={`/${lang}/calculator`}
+        className="bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all"
+      >
+        🚘 Розрахувати вартість
+      </a>
+      <a
+        href={`/${lang}/contact`}
+        className="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all"
+      >
+        📞 Замовити консультацію
+      </a>
+    </div>
+  </div>
+</section>
+      {/* Основний контент */}
+      <br>
+      </br>
 
       <section className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Переваги */}
