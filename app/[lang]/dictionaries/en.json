@@ -106,8 +106,59 @@
     "phone": "Phone",
     "email": "Email"
   },
-  "delivery": {
-    "title": "Car import from USA",
-    "description": "We will deliver your car quickly, reliably, and with full support."
+  "aboutPage": {
+    "title": "Turnkey Car Import & Delivery from the USA",
+    "subtitle": "We guide you through every step: from careful selection at leading auctions to receiving your keys in Ukraine.",
+    "whyTitle": "Why Buy a Car from the USA?",
+    "whySubtitle": "Buying a vehicle at American auctions offers several significant advantages compared to the European or domestic market.",
+    "whyItems": [
+      {
+        "title": "Save Up to 40%",
+        "description": "Even when including shipping and customs clearance fees, importing a car from the USA is significantly cheaper than buying a similar one in Ukraine."
+      },
+      {
+        "title": "Transparent History (CARFAX)",
+        "description": "You receive a complete vehicle history report: number of owners, mileage, maintenance records, and all accidents."
+      },
+      {
+        "title": "Premium Trim Levels",
+        "description": "The American market offers cars with top configurations, powerful engines, and unique options."
+      },
+      {
+        "title": "Honest Mileage",
+        "description": "Odometer tampering is a criminal offense in the US. You can be 100% confident in the authenticity of the mileage."
+      }
+    ],
+    "processTitle": "How Does the Delivery Process Work?",
+    "processSubtitle": "Simple and transparent stages of cooperation that guarantee the safety of your purchase.",
+    "processSteps": [
+      {
+        "title": "Selection & History Check",
+        "description": "We analyze your requirements, search for the best options on Copart, IAAI, and Manheim, and thoroughly check the history of each vehicle."
+      },
+      {
+        "title": "Signing the Contract",
+        "description": "We sign an official contract detailing the car requirements, the maximum budget, and our obligations."
+      },
+      {
+        "title": "Bidding at the Auction",
+        "description": "We participate in the bidding for the chosen car and purchase it at the most favorable price."
+      },
+      {
+        "title": "Shipping to Port & Ukraine",
+        "description": "We transport the car to the nearest US port, load it into a container, ship it to Europe, and then deliver it to Ukraine via a car hauler."
+      },
+      {
+        "title": "Customs Clearance",
+        "description": "Professional brokers carry out fast and cost-effective customs clearance in accordance with Ukrainian legislation."
+      },
+      {
+        "title": "Repair & Certification",
+        "description": "If necessary, we assist with finding high-quality spare parts, repair services, and passing the mandatory state certification."
+      }
+    ],
+    "ctaTitle": "Want to Calculate the Exact Cost of a Car?",
+    "ctaSubtitle": "Use our online calculator or submit a request, and our manager will select the best options for your budget.",
+    "ctaButton": "Go to Calculator"
   }
 }

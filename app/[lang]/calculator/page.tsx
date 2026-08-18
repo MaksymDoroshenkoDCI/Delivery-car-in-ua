@@ -1,13 +1,15 @@
+import Layout from "@/components/layout";
 import { getDictionary } from "../dictionaries";
 import Calculator from "./Calculator";
-import Layout from "@/components/layout";
 
-interface PageProps {
-  params: { lang: "ua" | "ru" | "en" };
-}
+type Lang = "ua" | "ru" | "en";
 
-export default async function Page({ params }: PageProps) {
-  const { lang } = params;        // ← БЕЗ await !!!
+export default async function CalculatorPage({
+  params,
+}: {
+  params: Promise<{ lang: Lang }>;
+}) {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   return (

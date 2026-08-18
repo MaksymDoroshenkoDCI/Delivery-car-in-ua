@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<string | null>(null);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -30,30 +30,43 @@ export default function ContactForm() {
     }
   }
 
+  const inputClass =
+    "w-full border border-border/60 bg-background/70 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all duration-200";
+
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 max-w-lg mx-auto p-6 rounded-2xl shadow-md">
-      <label>
-        <div className="font-medium">Ім’я</div>
-        <input name="name" required className="w-full border rounded px-3 py-2" />
+    <form
+      onSubmit={handleSubmit}
+      className="grid gap-4 max-w-lg mx-auto p-6 md:p-8 rounded-2xl border border-border/60 bg-card/80 backdrop-blur-sm shadow-lg"
+    >
+      <label className="grid gap-1.5">
+        <span className="font-medium text-sm">Ім’я</span>
+        <input name="name" required className={inputClass} />
       </label>
 
-      <label>
-        <div className="font-medium">Email</div>
-        <input name="email" type="email" required className="w-full border rounded px-3 py-2" />
+      <label className="grid gap-1.5">
+        <span className="font-medium text-sm">Email</span>
+        <input name="email" type="email" required className={inputClass} />
       </label>
 
-      <label>
-        <div className="font-medium">Повідомлення</div>
-        <textarea name="message" rows={4} required className="w-full border rounded px-3 py-2" />
+      <label className="grid gap-1.5">
+        <span className="font-medium text-sm">Повідомлення</span>
+        <textarea name="message" rows={4} required className={inputClass} />
       </label>
 
-      <button type="submit" className="bg-blue-600 text-white py-2 rounded">
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="mt-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-semibold shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 transition-all duration-200"
+      >
         {status === "loading" ? "Відправлення..." : "Надіслати"}
       </button>
 
-      {status === "success" && <p className="text-green-600">✅ Повідомлення успішно надіслано!</p>}
-      {status === "error" && <p className="text-red-600">❌ Сталася помилка. Спробуйте пізніше.</p>}
+      {status === "success" && (
+        <p className="text-green-600 dark:text-green-400">✅ Повідомлення успішно надіслано!</p>
+      )}
+      {status === "error" && (
+        <p className="text-red-600 dark:text-red-400">❌ Сталася помилка. Спробуйте пізніше.</p>
+      )}
     </form>
   );
 }
-// Форма зворотного зв'язку з обробкою станів (завантаження, успіх, помилка).
